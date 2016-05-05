@@ -3,37 +3,53 @@ angular.module('portfolioApp', ['ui.router'])
 .config(function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/about');
   $stateProvider
+  .state('home', {
+    controller: 'baseCtrl',
+    templateUrl: 'home.html',
+    abstract: true
+  })
   .state('about', {
     url: '/about',
-    templateUrl: 'about/about.html'
+    templateUrl: '/about/about.html',
+    parent: 'home'
   })
-  .state('projects', {
-    url: '/projects',
-    templateUrl: 'projects/projects.html'
+  .state('portfolio', {
+    url: '/portfolio',
+    templateUrl: '/portfolio/portfolio.html',
+    parent: 'home'
   })
-  .state('games', {
-    url: '/games',
-    templateUrl: '/games/games.html'
+  .state('resume', {
+    url: '/resume',
+    templateUrl: '/resume/resume.html',
+    parent: 'home'
   })
-  .state('media', {
-    url: '/media',
-    templateUrl: '/media/media.html'
-  })
-  .state('journal', {
-    url: '/journal',
-    templateUrl: '/journal/journal.html'
-  })
-      .state('calendar', {
-        url: '/journal/calendar',
-        templateUrl: '/journal/calendar/calendar.html'
-      })
-      .state('toDo', {
-        url: '/journal/toDo',
-        templateUrl: '/journal/toDoList/toDo.html',
-        controller: 'toDoCtrl'
-      })
-  .state('social', {
-    url: '/social',
-    templateUrl: '/social.html'
+  .state('contact', {
+    url: '/contact',
+    templateUrl: '/contact/contact.html',
+    parent: 'home'
   });
+  // .state('schedule', {
+  //   url: '/schedule',
+  //   templateUrl: '/schedule/schedule.html',
+  //   parent: 'home'
+  // })
+  //     .state('schedule.calendar', {
+  //       url: '/calendar',
+  //       templateUrl: '/schedule/calendar/calendar.html'
+  //     })
+  //     .state('schedule.toDo', {
+  //       url: '/toDo',
+  //       templateUrl: '/schedule/toDoList/toDo.html',
+  //       controller: 'toDoCtrl'
+  //     })
+//   .state('referrals', {
+//     url: '/referrals',
+//     templateUrl: '/referrals/referrals.html',
+//     parent: 'home'
+//   })
+//   .state('social', {
+//     url: '/social',
+//     templateUrl: '/social/social.html',
+//     parent: 'home'
+//   });
 });

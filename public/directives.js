@@ -3,16 +3,15 @@ angular.module('portfolioApp')
 .directive('imgList', function($location, $rootScope){
   return {
     restrict: 'E',
-    template: '<img ng-repeat="img in images" src="images/{{img.url}}.jpg" class="{{img.active}}"/>',
+    template: '<img ng-repeat="img in images" ng-src="images/{{img.url}}.jpg" class="{{img.active}}"/>',
     scope: {},
     link: function(scope, element, attrs, controller){
       scope.images = [
         {active: 'activeImg', url: 'about'},
-        {active: '', url: 'projects'},
-        {active: '', url: 'games'},
-        {active: '', url: 'media'},
-        {active: '', url: 'journal'},
-        {active: '', url: 'social'}
+        {active: '', url: 'portfolio'},
+        {active: '', url: 'resume'},
+        {active: '', url: 'contact'},
+        // {active: '', url: 'schedule'}
       ];
       $rootScope.$on("$locationChangeStart", function(event, nextUrl, currentUrl) {
         var oldIndx = null, newIndx = null;
@@ -37,11 +36,11 @@ angular.module('portfolioApp')
     scope: {},
     link: function(scope, element, attrs, controller){
       scope.navItems = [
-        {active: '', name: 'Projects', url: 'projects'},
-        {active: '', name: 'Games', url: 'games'},
-        {active: '', name: 'Media', url: 'media'},
-        {active: '', name: 'Journal', url: 'journal'},
-        {active: '', name: 'Social', url: 'social'}
+        {active: 'activeItem', name: 'About', url: 'about'},
+        {active: '', name: 'Portfolio', url: 'portfolio'},
+        {active: '', name: 'Resume', url: 'resume'},
+        {active: '', name: 'Contact', url: 'contact'},
+        // {active: '', name: 'Schedule', url: 'schedule'}
       ];
       $rootScope.$on("$locationChangeStart", function(event, nextUrl, currentUrl) {
         var oldIndx = null, newIndx = null;
@@ -59,9 +58,9 @@ angular.module('portfolioApp')
     }
   };
 })
-.directive('myButton', function(){
+.directive('fullscreen', function(){
   return {
     restrict: 'E',
-    template: '<button class="expander" ng-click="expand()"><i class="icon">^</i></button>'
+    templateUrl: './directives/fullscreen.html'
   };
 });

@@ -1,0 +1,327 @@
+// NG-CLOAK
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/////////////////  VARIABLES  /////////////////
+///// COLORS /////
+$accent = accent()
+accent(alpha = 1)
+  rgba(180, 50, 49, alpha) // Dark Red
+$shadowColor = shadowColor()
+shadowColor(alpha = 1)
+  rgba(0, 0, 0, alpha) // Black
+$borderColor = rgb(119, 119, 119) // Gray
+$bgColor1 = rgb(255, 255, 255) // White
+$bgColor2 = rgb(238, 238, 238) // Off White
+$bgColor3 = rgb(204, 204, 204) // Gray
+
+// GLOBAL STYLES
+*
+  box-sizing border-box
+
+body
+  width 100vw
+  height 100vh
+  margin 0
+  background-color #555  // To darken the background image
+  background-image url('./images/background1.jpg')
+  background-size cover
+  background-repeat no-repeat
+  background-position center
+  background-blend-mode overlay
+
+a
+  color black
+  text-decoration none
+
+nav-bar div, figure, main
+  background-color $bgColor1
+  border 1px solid $borderColor
+  padding 5px
+  margin 0 0 5px 0
+  box-shadow -5px 5px 15px $shadowColor
+
+//////////////////
+///// HEADER /////
+header
+  display flex
+  justify-content center
+  align-items center
+  h1
+    cursor pointer
+    color $bgColor2
+    font-family sans-serif
+    font-size 3em
+    margin .5em
+
+////////////////
+///// BODY /////
+.primary.container
+  display: flex;
+  justify-content: space-between;
+  margin auto
+  min-width 650px
+  max-width 1200px
+  /////// <Nav> has the primary picture and all of the navigation options //////
+  nav
+    width 35%
+    margin-left 3%
+    figure
+      padding-bottom 2px
+      .img-container
+        position relative
+        img
+          border 1px solid #000
+          opacity 0
+          transition opacity 2s
+          position absolute
+          margin auto
+          width 100%
+          left 0
+          top 0
+        #bg
+          opacity 1
+          position relative
+        .activeImg
+          opacity 1
+    nav-bar div
+      text-align center
+      &:hover
+        background-color $bgColor2
+        cursor pointer
+        border-left 4px solid #2b2  //Green
+      &.activeItem
+        background-color #ccc
+        font-weight bold
+
+  /////// <Main> houses all of the content /////////////////////////////////////
+  main
+    width 58%
+    margin-right 3%
+    height 600px
+    div.view
+      border: 1px solid $borderColor;
+      height: 100%;
+      padding: 2em;
+      background-color: $bgColor2
+      position: relative;
+      transition: width 2s, height 2s, left 2s, top 2s;
+      &.fullscreen {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+      h2
+        text-align: center;
+        font-size: 2.5em
+        font-weight: 100;
+        margin .2em 1em
+
+/////////////////////////////////  VIEWS  //////////////////////////////////////
+.primary.container main div.view
+  ////////  PORTFOLIO  /////////
+  &.portfolio
+    div.row
+      height 150px
+      border 1px solid $borderColor
+      border-radius: 5px
+      margin 1em
+      img
+        height 130px
+      &.trax
+        display flex
+        align-items: center
+        border 1px solid #91D000
+        background-color #101416
+        color $bgColor2
+        .column
+          &:last-child
+            flex-grow: 1
+            height 90%
+            text-align: center;
+            border-left 1px solid #91D000
+            i
+              font-size 1.5em
+            span
+              font-size .8em
+      &.life
+        display flex
+        align-items: center
+        border 1px solid #000
+        background-color #0078FF
+        color $bgColor2
+        .column
+          &:last-child
+            flex-grow: 1
+            height 90%
+            text-align: center;
+            border-left 1px solid #91D000
+            i
+              font-size 1.5em
+            span
+              font-size .8em
+        img
+          margin-top 10px
+
+  ////////  RESUME  /////////
+  &.resume
+    border 1em solid $accent
+    overflow-y: auto;
+    overflow-x: hidden
+    h1
+      font-size 2.5em
+      margin-bottom .4em
+    a
+      color: $accent
+    img
+      width 100px
+      position absolute
+      right 10%
+    p
+      line-height 1.5em
+      span
+        text-decoration: underline;
+    section
+      margin-left 2em
+    h4
+      padding .5em
+      border-top 3px solid $borderColor
+      border-bottom 1px solid $borderColor
+    div.grid
+      margin-left: 10%
+      line-height: 1.75em
+    div.row
+      display: flex;
+      justify-content: space-around;
+      &:first-child
+        justify-content: space-between;
+    div.column
+      width 33%
+  ////////  CONTACT  /////////
+  &.contact
+    .rowcontainer
+      width 65%
+      margin auto
+    div.row, a
+      display: flex;
+      align-items: center;
+    div.row
+      font-size: 1.25em
+      span
+        display inline-flex
+        justify-content: center;
+        align-items: center;
+        width 50px
+        height 50px
+        margin 1em
+        border 1px solid $accent
+        border-radius 50%
+        background-color accent(.05)
+        img
+          width 24px
+
+
+
+
+
+
+
+
+
+
+/////////////////////// TESTING BUTTONS ///////////////////////////
+@import url(http://fonts.googleapis.com/css?family=Lato:700);
+html, body {
+  font-family: "Lato", sans-serif;
+}
+
+.togglable.container
+  position absolute
+  top 0
+  right 0
+
+.toggle
+  margin 10px
+  display inline-block  ///<------
+
+.toggle {
+  box-shadow: inset 0 0 35px 5px rgba(0, 0, 0, 0.15), inset 0 2px 1px 1px rgba(255, 255, 255, 0.9), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  background: #dce0e4;
+  position: relative;
+  height: 35px;
+  width: 35px;
+}
+.toggle:before {
+  box-shadow: 0 0 17.5px 8.75px #fff;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  margin-left: -50.4px;
+  margin-top: -50.4px;
+  opacity: 0.2;
+  content: "";
+  height: 100.8px;
+  width: 100.8px;
+  left: 50%;
+  top: 50%;
+}
+.toggle .button {
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  filter: blur(1px);
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 10px 25px -2px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  position: absolute;
+  background: #ccd0d4;
+  margin-left: -12.5px;
+  margin-top: -12.5px;
+  display: block;
+  height: 25px;
+  width: 25px;
+  left: 50%;
+  top: 50%;
+}
+.toggle .label
+  display flex
+  align-items center
+  justify-content center
+  transition: color 300ms ease-out;
+  text-shadow: 1px 1px 3px #ccd0d4, 0 0 0 rgba(0, 0, 0, 0.8), 1px 1px 4px #fff;
+  position: absolute;
+  opacity: 0.9;
+  height: 100%;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.4);
+  i
+    font-weight: 700;
+    font-size: 16px;
+
+.toggle input {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.toggle input:active ~ .button {
+  box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
+}
+.toggle input:active ~ .label i {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.45);
+}
+.toggle input:checked ~ .button {
+  box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 25px -1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 20px 0 rgba(0, 0, 0, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.6);
+}
+.toggle input:checked ~ .label i {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.4);
+}
