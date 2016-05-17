@@ -24,6 +24,13 @@ a {
   color: #000;
   text-decoration: none;
 }
+.fullscreen {
+  position: fixed !important;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
 nav-bar div,
 figure,
 main {
@@ -104,18 +111,14 @@ header h1 {
   position: relative;
   transition: width 2s, height 2s, left 2s, top 2s;
 }
-.primary.container main div.view.fullscreen {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
 .primary.container main div.view h2 {
   text-align: center;
   font-size: 2.5em;
   font-weight: 100;
   margin: 0.2em 1em;
+}
+.primary.container main div.view.portfolio {
+  overflow-y: auto;
 }
 .primary.container main div.view.portfolio div.row {
   height: 150px;
@@ -247,6 +250,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 1000;
 }
 .toggle {
   margin: 10px;
@@ -259,20 +263,6 @@ body {
   position: relative;
   height: 35px;
   width: 35px;
-}
-.toggle:before {
-  box-shadow: 0 0 17.5px 8.75px #fff;
-  border-radius: 50%;
-  background: #fff;
-  position: absolute;
-  margin-left: -50.4px;
-  margin-top: -50.4px;
-  opacity: 0.2;
-  content: "";
-  height: 100.8px;
-  width: 100.8px;
-  left: 50%;
-  top: 50%;
 }
 .toggle .button {
   -webkit-filter: blur(1px);
@@ -318,14 +308,14 @@ body {
   top: 0;
 }
 .toggle input:active ~ .button {
-  box-shadow: 0 15px 25px -4px rgba(0,0,0,0.4), inset 0 -8px 30px 1px rgba(255,255,255,0.9), 0 -10px 15px -1px rgba(255,255,255,0.6), inset 0 8px 25px 0 rgba(0,0,0,0.4), inset 0 0 10px 1px rgba(255,255,255,0.6);
+  box-shadow: 0 10px 25px -2px rgba(0,0,0,0.4), inset 0 -8px 30px 1px rgba(255,255,255,0.9), 0 -10px 15px -1px rgba(255,255,255,0.6), inset 0 8px 25px 0 rgba(0,0,0,0.4), inset 0 0 10px 1px rgba(255,255,255,0.6);
 }
 .toggle input:active ~ .label i {
   font-size: 15px;
   color: rgba(0,0,0,0.45);
 }
 .toggle input:checked ~ .button {
-  box-shadow: 0 15px 25px -4px rgba(0,0,0,0.4), inset 0 -8px 25px -1px rgba(255,255,255,0.9), 0 -10px 15px -1px rgba(255,255,255,0.6), inset 0 8px 20px 0 rgba(0,0,0,0.2), inset 0 0 5px 1px rgba(255,255,255,0.6);
+  box-shadow: 0 10px 25px -2px rgba(0,0,0,0.4), inset 0 -8px 25px -1px rgba(255,255,255,0.9), 0 -10px 15px -1px rgba(255,255,255,0.6), inset 0 8px 20px 0 rgba(0,0,0,0.2), inset 0 0 5px 1px rgba(255,255,255,0.6);
 }
 .toggle input:checked ~ .label i {
   font-size: 15px;

@@ -1,7 +1,7 @@
 <div class="portfolio view" ng-class="{fullscreen: isFullscreen}">
-  <fullscreen></fullscreen>
   <h2>Portfolio</h2>
-  <a href="http://trax.spencer.solutions" target="_blank"><div class="row trax">
+  <a ui-sref="trax"><div class="row trax">
+  <!-- <a href="http://trax.spencer.solutions" target="_blank"><div class="row trax"> -->
     <div class="column">
       <img src="../images/trax.png" alt="FlexTrax">
     </div>
@@ -10,7 +10,13 @@
       <span>Super charge your training!</span>
     </div>
   </div></a>
-  <a href="http://life.spencer.solutions" target="_blank"><div class="row life">
-    <img src="" alt="">life.spencer.solutions
+  <a ui-sref="life"><div class="row life">
+    <img src="" alt="LifeApp">life.spencer.solutions
+  </div></a>
+  <a ui-sref="rockPaperScissors"><div class="row rps">
+    <img src="" alt="rpsApp">Rock Paper Scissors
+  </div></a>
+  <a ui-sref="vidFinder"><div class="row vidFinder">
+    <img src="" alt="vidFinder">Portfolio Inception
   </div></a>
 </div>
