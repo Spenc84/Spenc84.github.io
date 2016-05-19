@@ -159,16 +159,60 @@ header h1 {
   flex-grow: 1;
   height: 90%;
   text-align: center;
-  border-left: 1px solid #91d000;
-}
-.primary.container main div.view.portfolio div.row.life .column:last-child i {
-  font-size: 1.5em;
+  border-left: 2px solid #000;
 }
 .primary.container main div.view.portfolio div.row.life .column:last-child span {
+  font-size: 1.5em;
+}
+.primary.container main div.view.portfolio div.row.life .column:last-child i {
   font-size: 0.8em;
 }
 .primary.container main div.view.portfolio div.row.life img {
   margin-top: 10px;
+}
+.primary.container main div.view.portfolio div.row.rps {
+  display: flex;
+  align-items: center;
+  border: 1px solid #2c2b3f;
+  background-color: #585f93;
+  color: #eee;
+}
+.primary.container main div.view.portfolio div.row.rps .column:last-child {
+  flex-grow: 1;
+  height: 90%;
+  text-align: center;
+  border-left: 2px solid #2c2b3f;
+}
+.primary.container main div.view.portfolio div.row.rps .column:last-child span {
+  font-size: 1.5em;
+}
+.primary.container main div.view.portfolio div.row.rps .column:last-child i {
+  font-size: 0.8em;
+}
+.primary.container main div.view.portfolio div.row.rps .column img {
+  padding: 10px;
+}
+.primary.container main div.view.portfolio div.row.vid {
+  display: flex;
+  align-items: center;
+  border: 1px solid #f3f3f3;
+  background-color: #367ab5;
+  color: #eee;
+}
+.primary.container main div.view.portfolio div.row.vid .column:last-child {
+  flex-grow: 1;
+  height: 90%;
+  text-align: center;
+  border-left: 2px solid #f3f3f3;
+}
+.primary.container main div.view.portfolio div.row.vid .column:last-child span {
+  font-size: 1.5em;
+}
+.primary.container main div.view.portfolio div.row.vid .column:last-child i {
+  font-size: 0.8em;
+}
+.primary.container main div.view.portfolio div.row.vid .column img {
+  padding: 10px;
 }
 .primary.container main div.view.resume {
   border: 1em solid #b43231;

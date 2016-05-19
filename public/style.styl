@@ -142,6 +142,7 @@ header
       margin 1em
       img
         height 130px
+      ///// TRAX /////
       &.trax
         display flex
         align-items: center
@@ -158,6 +159,7 @@ header
               font-size 1.5em
             span
               font-size .8em
+      ///// LIFE /////
       &.life
         display flex
         align-items: center
@@ -169,13 +171,51 @@ header
             flex-grow: 1
             height 90%
             text-align: center;
-            border-left 1px solid #91D000
-            i
-              font-size 1.5em
+            border-left 2px solid #000
             span
+              font-size 1.5em
+            i
               font-size .8em
         img
           margin-top 10px
+      ///// RPS /////
+      &.rps
+        display flex
+        align-items: center
+        border 1px solid #2C2B3F
+        background-color #585F93
+        color $bgColor2
+        .column
+          &:last-child
+            flex-grow: 1
+            height 90%
+            text-align: center;
+            border-left 2px solid #2C2B3F
+            span
+              font-size 1.5em
+            i
+              font-size .8em
+          img
+            padding 10px
+      ///// vidFinder /////
+      &.vid
+        display flex
+        align-items: center
+        border 1px solid #f3f3f3
+        background-color #367ab5
+        color $bgColor2
+        .column
+          &:last-child
+            flex-grow: 1
+            height 90%
+            text-align: center;
+            border-left 2px solid #f3f3f3
+            span
+              font-size 1.5em
+            i
+              font-size .8em
+          img
+            padding 10px
 
   ////////  RESUME  /////////
   &.resume
